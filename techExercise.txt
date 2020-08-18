@@ -1,0 +1,61 @@
+//Creating 2 classes User and job.
+//User class contains the following attributes
+class user
+{
+string name;
+List<string> Skills = new List<string>();
+string workingNature;
+}
+//Job class contains the following attributes
+class job
+{
+string jobname;
+List<string> JobSkills = new List<string>();
+string jobWorkingNature;
+}
+
+//Creating a list of users and jobs
+  public static List<user> userlist = new List<user>();
+  public static List<job> joblist = new List<job>();
+
+//Creating a function "JobMatch"
+//This function "JobMatch" gets 2 lists as input. list of job skills and a list of individual skills 
+and the output of the function is an integer from 0 to 100
+
+public static int JobMatch(List<job>,List<user>)
+{
+public int matchScore;
+// checking if (foreach list of jobs, foreach list of users 
+	//check if user.skills == job.skills or user.workingNature == job.WorkingNature)
+	
+	foreach (user usr in userlist)
+	{
+				{
+				if (joblist.FindAll(job => job.skills == usr.skills) && 
+				if (joblist.FindAll(job => job.workingNature == usr.workingNature))
+				{
+				matchScore = 100;
+				}
+				else 
+				matchScore = 0;
+				}
+				
+	}
+	
+	//get count of matching records to calculate the matchScore
+	foreach (user usr in userlist)
+	{
+	int skillscount = joblist.Count(job => job.skills == usr.skills);
+	int workingNatureCount = joblist.Count(job => job.workingNature == usr.workingNature);
+	int count = skillscount + workingNatureCount;
+//Calculate matchScore according to the count of matching records
+				
+int totalcount =  joblist.Count();
+matchScore = (count / totalcount) * 100);
+	}
+	
+	return matchScore;
+}
+				
+				
+	
